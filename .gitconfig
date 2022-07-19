@@ -1,0 +1,42 @@
+[user]
+	email = andmalc@gmail.com
+	name = Andrew Malcolmson
+[push]
+	default = simple
+	autoSetupRemote = true
+[core]
+	editor = vi
+	whitespace = off
+	pager = less -r
+[advice]
+	statusuoption = false
+[color]
+	ui = true
+[alias]
+	graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'
+  	g = grep --extended-regexp --break --heading --line-number --ignore-case
+
+# Colours: normal, black, red, green, yellow, blue, magenta, cyan, or white
+# Effects: bold, dim, ul (underline), blink, and reverse 
+[color "diff"]
+  meta = magenta bold 
+  frag = cyan
+  old = red  
+  new = green 
+[color "status"]  
+  added = green bold  
+  changed = yellow bold  
+  untracked = red bold
+[grep]
+  break = true
+  heading = true
+  lineNumber = true
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
+[pull]
+	rebase = false
+#	ff = only
+[init]
+	defaultBranch = main
