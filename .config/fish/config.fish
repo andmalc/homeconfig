@@ -21,7 +21,7 @@ set -gx XDG_DATA_HOME "$HOME/.local/share"
 # PATH
 # Changes $fish_user_paths
 # Default is -U 
-# fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.local/bin"
 
 
 
