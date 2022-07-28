@@ -1,5 +1,14 @@
 
 Initial clone
+mkdir .conf-git
+git clone --separate-git-dir=.conf-git  git@github.com:andmalc/homeconfig.git gittmp
+rsync -r -v --exclude '.git' gittmp/ $HOME
+rm -r gittmp
+
+abbr conf 'git --git-dir=$HOME/.conf-git --work-tree=$HOME'
+conf remote set-url origin git@github.com:andmalc/homeconfig.git
+
+Old:
 	git clone --recursive git@github.com:andmalc/config.git
 	Git submodule added
 	git submodule update --init --recursive
