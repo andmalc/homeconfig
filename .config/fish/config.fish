@@ -44,6 +44,10 @@ abbr --add --global gp 'git push'
 abbr --add --global gpl 'git pull'
 abbr --add --global gs 'git status -sb'
 
+# Git Homedir strategy
+abbr --add --global conf 'git --git-dir=$HOME/.conf-git --work-tree=$HOME' 
+
+
 
 # Bindings
 # Here or add to fish_key_bindings function?
