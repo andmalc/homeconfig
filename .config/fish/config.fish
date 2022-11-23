@@ -60,7 +60,7 @@ bind \b backward-delete-char
 #set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
 # Ripgrep
-set -x RIPGREP_CONFIG_PATH ~/.config/rg
+set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 
 # Plugins
 #
