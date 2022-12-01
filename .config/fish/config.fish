@@ -18,6 +18,19 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 #set -x XDG_DATA_DIRS $HOME/.local/share/flatpak/exports/share /var/lib/flatpak/exports/share
 
+# Neovim
+#set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
+
+# Ripgrep
+set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
+
+# FZF 
+# default to load in preview mode with bat as pager 
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
+# use fd-find
+export FZF_DEFAULT_COMMAND="fd --type f"
+
+
 # PATH
 # Changes $fish_user_paths
 # Default is -U 
@@ -55,12 +68,6 @@ abbr --add --global conf 'git --git-dir=$HOME/.conf-git --work-tree=$HOME'
 
 # Ctrl H = backspace
 bind \b backward-delete-char
-
-# Neovim
-#set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
-
-# Ripgrep
-set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 
 # Plugins
 #
