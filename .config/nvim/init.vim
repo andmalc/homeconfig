@@ -1,6 +1,10 @@
 " General {{{1
 
-set list
+
+"set list
+
+" Dir for swap files
+set dir=~/tmp/nvimswp
 
 set foldmethod=marker
 
