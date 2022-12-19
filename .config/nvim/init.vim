@@ -1,21 +1,34 @@
-" General {{{1
+" Interface {{{1
 
+" Copy/yank always to plus register (clipboard)
+set clipboard=unnamedplus
 
 "set list
-
-" Dir for swap files
-set dir=~/tmp/nvimswp
 
 set foldmethod=marker
 
 " relative line numbering
 set rnu
 
-" Wrap at character in 'breakat' rather than at last character on screen
-set linebreak
+" Vertical line at cursor position
+set cursorline
 
 " Disable bell noises
 set visualbell
+
+set splitright splitbelow
+
+" ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+
+Line formatting {{{1
+
+" Wrap at character in 'breakat' rather than at last character on screen
+set linebreak
 
 " Tabs
 set ai
@@ -24,23 +37,20 @@ set sw=4
 set sts=4
 set noexpandtab
 
-set splitright splitbelow
-
+" Files {{{1
+"
 " load changes to file from outside Vim
 set autoread
 
 set undodir=~/.config/nvim/undodir
 set undofile
 
+" Dir for swap files
+set dir=~/tmp/nvimswp
+
 set hidden
 
 set scrolloff=5
-
-" ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
 
 " Don't load netrw
 " let g:loaded_netrw       = 1
