@@ -33,7 +33,7 @@
   lineNumber = true
 [status]
 	submoduleSummary = true
-	#showUntrackedFiles = no
+	showUntrackedFiles = no
 
 [diff]
 	submodule = log
