@@ -1,7 +1,7 @@
 " Interface {{{1
 
 " Copy/yank always to plus register (clipboard)
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 "set list
 
@@ -25,7 +25,7 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 
-Line formatting {{{1
+" Line formatting {{{1
 
 " Wrap at character in 'breakat' rather than at last character on screen
 set linebreak
