@@ -3,6 +3,7 @@ theme="acme"
 
 [editor]
 cursorline=true
+# indent-guides.render="true"
 
 # line-number = "relative"
 

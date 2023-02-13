@@ -72,7 +72,7 @@ bind \b backward-delete-char
 
 # Plugins
 #
-# Fisher to install to .local/share/fisher
+# Fisher function and its plugins to install to .local/share/fisher
 set -g fisher_path ~/.local/share/fisher
 
 #for file in $fisher_path/conf.d/*.fish
