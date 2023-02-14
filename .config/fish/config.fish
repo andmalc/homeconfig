@@ -2,14 +2,14 @@
 # length of directory abbreviations in prompt
 set fish_prompt_pwd_dir_length 3
 
-# Shell Variables
+# Shell Variables {{{1
 
 # prevent CDPATH from being read by shell scripts
 if status --is-interactive
 #	set CDPATH ~ ~/config ~/notes ~/work $CDPATH
 end
 
-# Environment Variables
+# Environment Variables {{{1
 #
 set -x EDITOR nvim
 set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
@@ -22,7 +22,7 @@ set -gx XDG_DATA_HOME "$HOME/.local/share"
 #set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
 # Ripgrep
-set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
+set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep/ripgreprc
 
 # FZF 
 # default to load in preview mode with bat as pager 
@@ -38,11 +38,11 @@ fish_add_path "$HOME/.local/bin"
 
 
 
-# Abbreiations
+# Abbreiations {{{1
 # Consider adding with -U so saved in fish_variables instead
 
 # Git Homedir strategy
-abbr --add --global dotfiles 'git --git-dir=$HOME/.git-conf --work-tree=$HOME' 
+abbr --add --global conf 'git --git-dir=$HOME/.git-conf --work-tree=$HOME' 
 
 abbr --add --global v nvim
 abbr --add --global s sudo
@@ -63,14 +63,14 @@ abbr --add --global gs 'git status -sb'
 
 
 
-# Bindings
+# Bindings {{{1
 # Here or add to fish_key_bindings function?
 # bind \x7F 'backward-kill-bigword'
 
 # Ctrl H = backspace
 bind \b backward-delete-char
 
-# Plugins
+# Plugins {{{1
 #
 # Fisher function and its plugins to install to .local/share/fisher
 set -g fisher_path ~/.local/share/fisher
@@ -78,4 +78,13 @@ set -g fisher_path ~/.local/share/fisher
 #for file in $fisher_path/conf.d/*.fish
 #    builtin source $file 2> /dev/null
 #end
+
+# Kitty Term Shell Integration for within containers {{{1
+# https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
+
+if set -q KITTY_INSTALLATION_DIR
+    set --global KITTY_SHELL_INTEGRATION enabled
+    source "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish"
+    set --prepend fish_complete_path "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_completions.d"
+end
 
