@@ -15,6 +15,10 @@ set -x EDITOR nvim
 set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 
 set -gx XDG_CONFIG_HOME "$HOME/.config"
+
+set -gx SUDO_EDITOR nvim
+set -gx SYSTEMD_EDITOR nvim
+
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 #set -x XDG_DATA_DIRS $HOME/.local/share/flatpak/exports/share /var/lib/flatpak/exports/share
 
@@ -36,6 +40,8 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 # Default is -U 
 fish_add_path "$HOME/.local/bin"
 
+# Remote/SSH hostname colour in prompt
+#set -gx fish_color_host_remote red
 
 
 # Abbreiations {{{1
