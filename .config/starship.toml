@@ -1,0 +1,13 @@
+format = """
+$hostname \
+$git_branch$git_status\
+$directory"""
+
+
+[git_branch]
+format = '[$branch(:$remote_branch)]($style)'
+
+
+[hostname]
+ssh_only = false
+format = '[$hostname]($style)'
